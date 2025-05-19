@@ -1,15 +1,13 @@
-import { CONFIG } from './config.js';
-import { courses } from './courses.js';
-
 export class CourseApp {
-    constructor() {
-        this.currentIndex = 0;
+    constructor(config, courses) {
+        this.config = config;
         this.courses = courses;
+        this.currentIndex = 0;
         this.init();
     }
 
     init() {
-        document.title = CONFIG.courseTitle;
+        document.title = this.config.courseTitle;
         this.renderSidebar();
         this.renderCourse(this.currentIndex);
     }
