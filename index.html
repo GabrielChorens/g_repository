@@ -2,176 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Codely Cursos</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #4fd1c5 0%, #3182ce 100%);
-            margin: 0;
-            min-height: 100vh;
-        }
-        .header {
-            background: #183a4a;
-            color: #fff;
-            padding: 32px 0 24px 0;
-            text-align: center;
-            box-shadow: 0 2px 12px #0002;
-        }
-        .header .logo {
-            font-size: 2.2em;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-            display: inline-block;
-        }
-        .header .subtitle {
-            font-size: 1.2em;
-            color: #b2f5ea;
-            margin-top: 8px;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            background: #f7fafc;
-            border-radius: 18px;
-            box-shadow: 0 4px 32px 0 rgba(44, 182, 202, 0.10);
-            padding: 40px 32px 32px 32px;
-        }
-        .main-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: #319795;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
-            margin-top: 32px;
-        }
-        .course-card {
-            background: linear-gradient(120deg, #e6fffa 60%, #bee3f8 100%);
-            border-radius: 16px;
-            box-shadow: 0 2px 16px 0 rgba(44,182,202,0.08);
-            padding: 28px 24px 20px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            transition: transform 0.15s, box-shadow 0.15s;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-        .course-card:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 8px 32px 0 rgba(44,182,202,0.16);
-            border: 2px solid #38b2ac;
-        }
-        .course-title {
-            font-size: 1.18em;
-            font-weight: 700;
-            color: #2c7a7b;
-            margin-bottom: 8px;
-        }
-        .course-desc {
-            color: #234e52;
-            font-size: 1em;
-            margin-bottom: 18px;
-        }
-        .go-btn {
-            background: #319795;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 0.6em 1.5em;
-            font-size: 1.08em;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 2px 8px 0 rgba(44,182,202,0.08);
-            transition: background 0.2s, color 0.2s;
-            margin-top: auto;
-        }
-        .go-btn:hover {
-            background: #38b2ac;
-            color: #fff;
-        }
-        /* Password Modal */
-        .password-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(44, 182, 202, 0.18);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .password-box {
-            background: #fff;
-            padding: 36px 32px 28px 32px;
-            border-radius: 16px;
-            box-shadow: 0 4px 32px 0 rgba(44,182,202,0.18);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 320px;
-        }
-        .password-box label {
-            font-size: 1.1em;
-            color: #234e52;
-            margin-bottom: 12px;
-        }
-        .password-box input {
-            font-size: 1.2em;
-            padding: 10px 14px;
-            border-radius: 8px;
-            border: 1px solid #b2f5ea;
-            margin-top: 8px;
-            margin-bottom: 16px;
-            width: 100%;
-            outline: none;
-            transition: border 0.2s;
-        }
-        .password-box input:focus {
-            border: 1.5px solid #319795;
-        }
-        .password-box button {
-            background: #319795;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 0.6em 1.5em;
-            font-size: 1.08em;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 2px 8px 0 rgba(44,182,202,0.08);
-            transition: background 0.2s, color 0.2s;
-        }
-        .password-box button:hover {
-            background: #38b2ac;
-        }
-        .password-error {
-            color: #e53e3e;
-            margin-top: 10px;
-            min-height: 22px;
-            font-size: 1em;
-        }
-        .hidden { display: none !important; }
-        @media (max-width: 700px) {
-            .container {
-                padding: 16px 4px;
-            }
-            .courses-grid {
-                gap: 16px;
-            }
-            .password-box { min-width: 0; width: 90vw; }
-        }
-    </style>
+    <title>Cursos</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/modern-index.css">
 </head>
 <body>
     <div class="header">
         <span class="logo">codely</span>
-        <div class="subtitle">Sube de nivel: aprende diseño y arquitectura de Software</div>
+        <div class="subtitle">Un clon con amor y sin fines de lucro</div>
     </div>
     <div id="passwordModal" class="password-modal">
         <form class="password-box" id="passwordForm" autocomplete="off" onsubmit="return false;">
@@ -182,9 +20,15 @@
         </form>
     </div>
     <div class="container hidden" id="mainContainer">
-        <div class="main-title">Selecciona un curso</div>
-        <div class="courses-grid" id="coursesGrid"></div>
+        <nav class="sidebar" id="sidebar">
+            <ul id="courseList"></ul>
+        </nav>
+        <section class="main" id="mainContent">
+            <h2 id="courseTitle">Selecciona un curso</h2>
+            <p id="courseDesc"></p>
+            <button id="goBtn" class="hidden">Ir al curso</button>
+        </section>
     </div>
-    <script type="module" src="src/main-index.js"></script>
+    <script type="module" src="./src/main-index.js"></script>
 </body>
 </html>

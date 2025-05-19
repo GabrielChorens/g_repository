@@ -7,11 +7,67 @@ const passwordError = document.getElementById('passwordError');
 const passwordForm = document.getElementById('passwordForm');
 const PASSWORD = 'Paradius'; // You can change this if needed
 
+const courseList = document.getElementById('courseList');
+const courseTitle = document.getElementById('courseTitle');
+const courseDesc = document.getElementById('courseDesc');
+const goBtn = document.getElementById('goBtn');
+const sidebar = document.getElementById('sidebar');
+
+let selectedCourseIdx = null;
+
+function renderCourseList() {
+    courseList.innerHTML = '';
+    let firstCourseIdx = null;
+    courses.forEach((item, idx) => {
+        if (item.type === 'category') {
+            const divider = document.createElement('li');
+            divider.textContent = item.name;
+            divider.className = 'category-divider';
+            divider.setAttribute('aria-disabled', 'true');
+            courseList.appendChild(divider);
+        } else {
+            if (firstCourseIdx === null) firstCourseIdx = idx;
+            const li = document.createElement('li');
+            li.textContent = item.name;
+            li.className = (selectedCourseIdx === idx) ? 'selected' : '';
+            li.onclick = () => selectCourse(idx);
+            li.onkeydown = (e) => {
+                if (e.key === 'Enter' || e.key === ' ') selectCourse(idx);
+            };
+            li.tabIndex = 0;
+            courseList.appendChild(li);
+        }
+    });
+    // Select the first course by default if none selected
+    if (selectedCourseIdx === null && firstCourseIdx !== null) {
+        selectCourse(firstCourseIdx);
+    }
+}
+
+function selectCourse(idx) {
+    selectedCourseIdx = idx;
+    renderCourseList();
+    const course = courses[idx];
+    courseTitle.textContent = course.name;
+    courseDesc.textContent = course.description;
+    goBtn.classList.remove('hidden');
+    goBtn.onclick = () => goToCourse(idx);
+}
+
 function showMainContent() {
     passwordModal.classList.add('hidden');
     mainContainer.classList.remove('hidden');
     passwordInput.value = '';
     passwordError.textContent = '';
+    // Add header above the course list
+    if (!document.getElementById('sidebarHeader')) {
+        const header = document.createElement('div');
+        header.id = 'sidebarHeader';
+        header.textContent = 'Cursos';
+        header.className = 'sidebar-header';
+        sidebar.insertBefore(header, courseList);
+    }
+    renderCourseList();
 }
 
 function checkPassword(e) {
@@ -30,51 +86,9 @@ passwordInput.addEventListener('keydown', e => {
     if (e.key === 'Enter') checkPassword(e);
 });
 
-// Render courses only after password is validated
-const coursesGrid = document.getElementById('coursesGrid');
-
-function renderCourses() {
-    coursesGrid.innerHTML = '';
-    courses.forEach((course, idx) => {
-        const card = document.createElement('div');
-        card.className = 'course-card';
-        card.tabIndex = 0;
-        card.setAttribute('role', 'button');
-        card.setAttribute('aria-label', `Ir al curso ${course.name}`);
-
-        const title = document.createElement('div');
-        title.className = 'course-title';
-        title.textContent = course.name;
-
-        const desc = document.createElement('div');
-        desc.className = 'course-desc';
-        desc.textContent = course.description;
-
-        const goBtn = document.createElement('button');
-        goBtn.className = 'go-btn';
-        goBtn.textContent = 'Ir al curso';
-        goBtn.onclick = () => goToCourse(idx);
-
-        card.onclick = () => goToCourse(idx);
-        card.onkeydown = (e) => {
-            if (e.key === 'Enter' || e.key === ' ') goToCourse(idx);
-        };
-
-        card.appendChild(title);
-        card.appendChild(desc);
-        card.appendChild(goBtn);
-        coursesGrid.appendChild(card);
-    });
-}
+goBtn.classList.add('hidden');
 
 function goToCourse(idx) {
     const folder = courses[idx].folder;
-    window.location.href = `${folder}/src/index.html`;
+    window.location.href = `${folder}/index.html`;
 }
-
-// Only render courses if mainContainer is visible (after password)
-if (!mainContainer.classList.contains('hidden')) {
-    renderCourses();
-}
-// Also render after successful login
-mainContainer.addEventListener('transitionstart', renderCourses);

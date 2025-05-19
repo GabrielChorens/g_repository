@@ -1,0 +1,223 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4fd1c5 0%, #3182ce 100%);
+    margin: 0;
+    min-height: 100vh;
+}
+.header {
+    background: #183a4a;
+    color: #fff;
+    padding: 32px 0 24px 0;
+    text-align: center;
+    box-shadow: 0 2px 12px #0002;
+}
+.header .logo {
+    font-size: 2.2em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+.header .subtitle {
+    font-size: 1.2em;
+    color: #b2f5ea;
+    margin-top: 8px;
+}
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #f7fafc;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px 0 rgba(44, 182, 202, 0.10);
+    padding: 0;
+    display: flex;
+    min-height: 480px;
+}
+.sidebar {
+    width: 260px;
+    background: linear-gradient(135deg, #e6fffa 0%, #bee3f8 100%);
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    padding: 32px 0 32px 0;
+    box-shadow: 2px 0 8px rgba(44,182,202,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+#courseList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#courseList li {
+    padding: 14px 32px;
+    cursor: pointer;
+    font-size: 1.08em;
+    color: #234e52;
+    border-left: 4px solid transparent;
+    transition: background 0.18s, border 0.18s, color 0.18s;
+}
+#courseList li.selected, #courseList li:hover {
+    background: #b2f5ea;
+    color: #2c7a7b;
+    border-left: 4px solid #319795;
+    font-weight: 600;
+}
+.main {
+    flex: 1;
+    padding: 48px 48px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 400px;
+}
+#courseTitle {
+    font-size: 1.5em;
+    color: #319795;
+    margin-bottom: 16px;
+}
+#courseDesc {
+    color: #234e52;
+    font-size: 1.08em;
+    margin-bottom: 32px;
+}
+#goBtn {
+    background: #319795;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7em 2em;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(44,182,202,0.08);
+    transition: background 0.2s, color 0.2s;
+    margin-top: auto;
+    align-self: stretch;
+}
+#goBtn:hover {
+    background: #38b2ac;
+}
+/* Password Modal */
+.password-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 182, 202, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.password-box {
+    background: #fff;
+    padding: 36px 32px 28px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px 0 rgba(44,182,202,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+}
+.password-box label {
+    font-size: 1.1em;
+    color: #234e52;
+    margin-bottom: 12px;
+}
+.password-box input {
+    font-size: 1.2em;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #b2f5ea;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    width: 100%;
+    outline: none;
+    transition: border 0.2s;
+}
+.password-box input:focus {
+    border: 1.5px solid #319795;
+}
+.password-box button {
+    background: #319795;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6em 1.5em;
+    font-size: 1.08em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(44,182,202,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+.password-box button:hover {
+    background: #38b2ac;
+}
+.password-error {
+    color: #e53e3e;
+    margin-top: 10px;
+    min-height: 22px;
+    font-size: 1em;
+}
+.hidden { display: none !important; }
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        min-height: 0;
+    }
+    .sidebar {
+        width: 100%;
+        border-radius: 18px 18px 0 0;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+    }
+    #courseList {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    #courseList li {
+        padding: 14px 18px;
+        border-left: none;
+        border-bottom: 4px solid transparent;
+    }
+    #courseList li.selected, #courseList li:hover {
+        background: #b2f5ea;
+        border-bottom: 4px solid #319795;
+        border-left: none;
+    }
+    .main {
+        padding: 32px 12px 24px 12px;
+    }
+}
+.sidebar-header {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #319795;
+    padding: 0 32px 12px 32px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+.category-divider {
+    display: flex;
+    align-items: center;
+    font-size: 0.92em;
+    color: #a0aec0;
+    background: none;
+    font-weight: 600;
+    padding: 6px 16px 6px 16px;
+    border: none;
+    cursor: default;
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 10px 0 6px 0;
+}
+.category-divider::before,
+.category-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 0 10px;
+} 
