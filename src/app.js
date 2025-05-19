@@ -109,6 +109,4 @@ export class CourseApp {
         }, 1800);
     }
 }
-
-// Inicializar la aplicación
-window.app = new CourseApp(); 
+// window.app = new CourseApp(); // Eliminado para evitar doble inicialización 
