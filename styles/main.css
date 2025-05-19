@@ -27,6 +27,16 @@ body {
     gap: 1.5rem;
 }
 
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.5em;
+}
+
 .sidebar li a {
     color: #f3e8ff;
     text-decoration: none;
@@ -48,6 +58,28 @@ body {
     background: rgba(255, 255, 255, 0.08);
     border-left: 3px solid var(--accent);
     font-weight: 600;
+    box-shadow: 0 0 0 2px var(--accent), 0 2px 8px 0 rgba(80,0,120,0.04);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    background: var(--primary);
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5em 1.1em;
+    font-weight: 600;
+    font-size: 1.05em;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px 0 rgba(80,0,120,0.08);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.back-link:hover {
+    background: var(--secondary);
+    color: var(--accent) !important;
 }
 
 .main-content {
@@ -123,6 +155,23 @@ header h1 {
 .copy-btn:hover {
     background: var(--primary);
 }
+.code-block-container pre {
+    background: #ede9fe;
+    border-radius: 8px;
+    padding: 1.1em 1.2em 1.1em 1.2em;
+    margin: 0;
+    font-size: 1.05em;
+    overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.code-block-container code {
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 1em;
+    color: #4b2997;
+    white-space: pre;
+}
+
 .toast {
     position: fixed;
     top: 30px;
@@ -142,6 +191,30 @@ header h1 {
     pointer-events: auto;
 }
 
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.nav-buttons button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6em 1.5em;
+    font-size: 1.08em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(80,0,120,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+.nav-buttons button:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -154,5 +227,8 @@ header h1 {
     .main-content {
         margin: 1rem;
         padding: 1rem;
+    }
+    .nav-buttons {
+        justify-content: center;
     }
 } 
