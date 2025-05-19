@@ -1,0 +1,30 @@
+export default {
+    title: "25 Dramitas en Go",
+    videoId: "wv8i_vaOazs",
+    notes: [
+        { type: "subtitle", content: "Los panic y Go" },
+        { type: "text", content: "En muchos aspectos, los panic en Go nos recuerdan a las excepciones presentes en muchos otros lenguajes. Y es que al final, de igual modo, si no los controlamos, nuestra aplicación terminará interrumpiéndose, dejando de proveer servicio (por ejemplo en el caso de un servidor web)." },
+        { type: "text", content: "Y, si bien es cierto que muchas de las librerías existentes hoy en día ya añaden un mínimo soporte para la recuperación de panic (por ejemplo el paquete net/http), lo cierto es que es altamente recomendable de que siempre se acuerden de añadir vuestra propia capa de seguridad y recuperación para garantizar que vuestra aplicación reaccionará como sea debido en caso de que eso ocurra." },
+        { type: "link", content: "https://golang.org/pkg/net/http/" },
+        { type: "text", content: "Pero, sobretodo, es importante que SIEMPRE se aseguren de que todos los puntos de entrada de vuestra aplicación están mínimamente cubiertos, sino, como ya hemos comentado, vuestra aplicación se verá interrumpida, con todo lo que ello acarrea." },
+        { type: "subtitle", content: "Go Modules" },
+        { type: "text", content: "Teniendo en cuenta los orígenes de Go, lenguaje de programación que fue creado para cubrir las necesidades específicas de Google en un ecosistema específico (muchos proyectos allí forman parte de un gran repositorio monolítico), no es extraño que no haya sido hasta hace relativamente poco que se haya estandarizado una manera formal de gestionar las dependencias y todo lo que ello implica (versiones, etc)." },
+        { type: "text", content: "Sin embargo, a día de hoy aún nos seguimos encontrando algunos aspectos en los que necesitamos seguir trabajando para poder llegar a un estado de madurez y robustez al nivel de otros lenguajes de programación." },
+        { type: "subtitle", content: "Vanity imports" },
+        { type: "text", content: "Uno de esos aspectos problemáticos, es el hecho de que la forma de identificar e importar los diferentes paquetes de nuestros módulos es mediante toda la dirección (URL) que hace referencia a donde está alojado el código." },
+        { type: "text", content: "Esto puede generar fricciones importantes, por ejemplo en caso de que cambiemos el sitio dónde está alojado nuestro código (de GitHub a GitLab por ejemplo)." },
+        { type: "text", content: "Una de las alternativas para solucionar este problema reside básicamente en lo que se denominan los vanity imports, los que permite que la dirección a la que nos referimos realmente no sea directamente el repositorio sino más bien una dirección que actúa de proxy. Esto hará que los cambios anteriormente mencionados no se vean tan dolorosos. Sin embargo, seguirá siendo un problema si queremos cambiar el identificador de ese proxy, o si el mismo no está." },
+        { type: "text", content: "Podéis encontrar más información sobre los vanity imports en este artículo del blog." },
+        { type: "link", content: "https://blog.friendsofgo.tech/posts/vanity-imports/" },
+        { type: "subtitle", content: "La directiva replace" },
+        { type: "text", content: "Una de las soluciones más directas en el sentido de que no prevenir) los problemas anteriormente mencionados es la directiva replace, la cual nos permite \"sobreescribir\" las direcciones de los módulos así como sus versiones." },
+        { type: "text", content: "Podéis encontrar más información en la documentación oficial." },
+        { type: "link", content: "https://golang.org/ref/mod#go-mod-file-replace" },
+        { type: "subtitle", content: "Go modules v2+" },
+        { type: "text", content: "Finalmente, otro aspecto también bastante cuestionado en relación a los Go Modules es en la forma que se está gestionando el versionado semántico." },
+        { type: "link", content: "https://semver.org/lang/es/" },
+        { type: "text", content: "Si queréis entender exactamente cómo funcionan y cómo debéis gestionar el versionado de vuestros paquetes, os recomendamos encarecidamente echar un vistazo a este artículo del blog oficial." },
+        { type: "link", content: "https://blog.golang.org/v2-go-modules" },
+        { type: "text", content: "¡Ánimo!" }
+    ]
+};

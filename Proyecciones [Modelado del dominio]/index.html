@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando...</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <a href="#" onclick="app.goHome();return false;" class="back-link">⬅️ Home</a>
+            <h2>Cursos</h2>
+            <ul id="sidebarList"></ul>
+        </nav>
+        <main class="main-content">
+            <header>
+                <h1 id="courseTitle"></h1>
+            </header>
+            <div class="video-frame" id="videoFrame"></div>
+            <section class="notes-section" id="notesSection"></section>
+            <div class="nav-buttons">
+                <button id="prevBtn"></button>
+                <button id="nextBtn"></button>
+            </div>
+        </main>
+    </div>
+    <div id="toast" class="toast">¡Código copiado!</div>
+    <script type="module">
+        import { CourseApp } from '../../src/app.js';
+        import { CONFIG } from './src/config.js';
+        import { courses } from './src/courses.js';
+        window.app = new CourseApp(CONFIG, courses);
+    </script>
+</body>
+</html> 

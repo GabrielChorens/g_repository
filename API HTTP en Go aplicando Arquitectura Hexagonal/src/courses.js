@@ -16,6 +16,14 @@ import c15 from './courses/15.js';
 import c16 from './courses/16.js';
 import c17 from './courses/17.js';
 import c18 from './courses/18.js';
+import c19 from './courses/19.js';
+import c20 from './courses/20.js';
+import c21 from './courses/21.js';
+import c22 from './courses/22.js';
+import c23 from './courses/23.js';
+import c24 from './courses/24.js';
+import c25 from './courses/25.js';
+import c26 from './courses/26.js';
 
 export const courses = [
     c1,
@@ -35,5 +43,13 @@ export const courses = [
     c15,
     c16,
     c17,
-    c18
+    c18,
+    c19,
+    c20,
+    c21,
+    c22,
+    c23,
+    c24,
+    c25,
+    c26
 ]; 

@@ -1,6 +1,6 @@
 export default {
-    title: "10 Exprime el polimorfismo con los Agregados",
-    videoId: "t_8u0asTGlA",
+    title: "09 Servicios de dominio vs Agregados ¿Dónde van las reglas de negocio",
+    videoId: "hXx9q2CrPkU",
     notes: [
         { 
             type: "text", 

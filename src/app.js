@@ -49,11 +49,17 @@ export class CourseApp {
 
     renderNote(note, container) {
         switch (note.type) {
+            case 'subtitle':
+                container.innerHTML += `<div class="note-subtitle">${note.content}</div>`;
+                break;
             case 'text':
                 container.innerHTML += `<p>${note.content}</p>`;
                 break;
             case 'link':
                 container.innerHTML += `<p><a href="${note.content}" target="_blank">${note.content}</a></p>`;
+                break;
+            case 'named_link':
+                container.innerHTML += `<p><a href="${note.url}" target="_blank" class="note-named-link">${note.text}</a></p>`;
                 break;
             case 'image':
                 container.innerHTML += `<img src="${note.content}" alt="Imagen" style="max-width:100%;margin:1em 0;">`;
@@ -67,7 +73,6 @@ export class CourseApp {
     renderCodeBlock(code) {
         return `
             <div class="code-block-container">
-                <button class="copy-btn" onclick="app.copyToClipboard(\`${code.replace(/`/g, '\\`')}\`)">Copiar</button>
                 <pre><code>${code}</code></pre>
             </div>
         `;
@@ -89,7 +94,7 @@ export class CourseApp {
     }
 
     goHome() {
-        window.history.back();
+        window.location.href = '../index.html';
     }
 
     copyToClipboard(text) {

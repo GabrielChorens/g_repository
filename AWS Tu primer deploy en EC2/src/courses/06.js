@@ -1,0 +1,36 @@
+export default {
+    title: "06  Tipos de instancia en EC2",
+    videoId: "lyTa-59xRMw",
+    notes: [
+        { type: "text", content: "En AWS no podemos elegir exactamente la cantidad de RAM o CPU que tendrá nuestro servidor, sino que AWS ha definido unos tipos de servidores de entre los que elegiremos aquel que más se acerque a lo que nuestras aplicaciones necesitan. Vamos cómo funcionan los tipos de instancia en AWS." },
+        { type: "text", content: "Aunque lo vemos en el vídeo, vamos a explicar también por escrito cómo funcionan las instancias de tipo T2, también conocidas como instancias de desempeño por ráfagas." },
+        { type: "text", content: "Las instancias de tipo T2 tienen una capacidad de CPU limitada. En esta familia de instancias, el tamaño (t2.micro, small, large...) va a definir el rendimiento base que tendrá el servidor. Por ejemplo, en una t2.micro puedes usar el 10% de la CPU, mientras que en una t2.small puedes usar el 20% de la CPU." },
+        { type: "text", content: "Sin embargo, la instancia puede sobrepasar ese porcentaje de CPU. Esto es así porque las instancias de la familia T2 funcionan a base de unos créditos, que se van gastando cuanta más CPU usamos." },
+        { type: "subtitle", content: "¿Cómo obtenemos créditos?" },
+        { type: "text", content: "Al arrancar la instancia, según el tipo, ésta obtendrá una cantidad de créditos u otros. Una t2.small empezará con 30 créditos mientras que una t2.medium empezará con 60 créditos." },
+        { type: "text", content: "Además, cada hora, la instancia ganará créditos dependiendo de su tipo, hasta cierto límite superior. Mientras una t2.micro ganará 6 créditos por hora, hasta un máximo de 144 créditos, una t2.medium ganará 24 por hora hasta un máximo de 576 créditos." },
+        { type: "text", content: "Los créditos obtenidos por el paso del tiempo, caducan a las 24 horas." },
+        { type: "subtitle", content: "¿Cómo se gastan los créditos?" },
+        { type: "text", content: "Un crédito equivale a un núcleo de CPU usándose al 100% durante 1 minuto. En base al uso de CPU, EC2 va calculando cuantos créditos hemos gastado." },
+        { type: "text", content: "Por ejemplo, también nos quitarán un crédito si tenemos el núcleo de CPU al 50% durante 2 minutos." },
+        { type: "text", content: "Y si tenemos dos núcleos al 25% durante 2 minutos, eso también sería 1 crédito menos." },
+        { type: "text", content: "Vamos a ver unos escenarios de ejemplo utilizando un t2.micro, que según la documentación de EC2 recupera 6 créditos por hora, hasta un máximo de 144." },
+        { type: "subtitle", content: "Escenario 1:" },
+        { type: "text", content: "Suponemos que la instancia tiene 0 créditos." },
+        { type: "text", content: "Usamos un 10% del único núcleo en la t2.micro durante 1 hora (60 minutos)." },
+        { type: "text", content: "Eso significa que hemos ganado 6 créditos porque ha pasado una hora, pero también los hemos gastado por el uso que le hemos dado. Nos quedamos con un balance de 0 créditos." },
+        { type: "subtitle", content: "Escenario 2:" },
+        { type: "text", content: "Suponemos que la instancia tiene 0 créditos." },
+        { type: "text", content: "Usamos un 5% de CPU durante 1 hora." },
+        { type: "text", content: "Ganamos otra vez 6 créditos, pero esta vez solo hemos gastado 3. Por tanto, 6 - 3 = 3 créditos que se suman a nuestro balance total." },
+        { type: "text", content: "Estos 3 créditos que hemos ahorrado, se pierden a las 24 horas." },
+        { type: "subtitle", content: "Escenario 3:" },
+        { type: "text", content: "Tenemos los 10 créditos en nuestro balance, que hemos ido acumulando en las últimas 24 horas." },
+        { type: "text", content: "Usamos un 20% de CPU durante 1 hora." },
+        { type: "text", content: "Ganamos 6 créditos por haber pasado una hora, pero ese uso del 20% de CPU nos cuesta 12 créditos." },
+        { type: "text", content: "Como hemos gastado más de lo que hemos generado en la última hora, restamos del balance de la instancia los créditos necesarios. Para cubrir el coste de 12 créditos, usamos los 6 créditos ganados esta última hora más otros 6 de nuestro balance, quedando nuestro balance en 4 créditos." },
+        { type: "subtitle", content: "¿Qué ocurre si gasto los créditos de una instancia?" },
+        { type: "text", content: "El rendimiento de esa instancia se limitará al rendimiento base del tipo. Por ejemplo, una t2.small podrá utilizar como mucho un 20% de CPU. En el caso de una t2.medium, sería un 40%, un 20% por cada núcleo de CPU (tiene 2 núcleos)." }
+
+    ]
+}; 
