@@ -6,6 +6,7 @@ import goHexagonal from "./courses/go-hexagonal.js";
 import auditoriaHemav from "./courses/auditoria-hemav.js";
 import automatizaTuFlujoDeTrabajoConGithubActions from "./courses/automatiza-tu-flujo-de-trabajo-con-githubactions.js";
 import awsSqsComoColaDeMensajeria from "./courses/aws-sqs-como-cola-de-mensajeria.js";
+import cache from "./courses/cache.js";
 
 // Define your courses here
 export const courses = [
@@ -18,4 +19,5 @@ export const courses = [
   goHexagonal,
   automatizaTuFlujoDeTrabajoConGithubActions,
   awsSqsComoColaDeMensajeria,
+  cache,
 ];
