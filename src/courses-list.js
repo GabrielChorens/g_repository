@@ -7,6 +7,7 @@ import auditoriaHemav from "./courses/auditoria-hemav.js";
 import automatizaTuFlujoDeTrabajoConGithubActions from "./courses/automatiza-tu-flujo-de-trabajo-con-githubactions.js";
 import awsSqsComoColaDeMensajeria from "./courses/aws-sqs-como-cola-de-mensajeria.js";
 import cache from "./courses/cache.js";
+import casoPracticoAgregadosYReadModelEnDdd from "./courses/caso-practico-agregados-y-read-model-en-ddd.js";
 
 // Define your courses here
 export const courses = [
@@ -20,4 +21,5 @@ export const courses = [
   automatizaTuFlujoDeTrabajoConGithubActions,
   awsSqsComoColaDeMensajeria,
   cache,
+  casoPracticoAgregadosYReadModelEnDdd,
 ];
