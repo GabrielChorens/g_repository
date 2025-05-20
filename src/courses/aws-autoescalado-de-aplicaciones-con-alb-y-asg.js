@@ -51,11 +51,6 @@ export default {
       type: "text",
       content:
         "Te recomendamos aprovechar la suscripción para hacer el curso de Docker: De 0 a deployment antes de este curso si aún desconoces cómo automatizar el despliegue en las máquinas de EC2 que habrás preparado.",
-    },
-    {
-      type: "named_link",
-      text: "Repositorio del curso",
-      url: "PLACEHOLDER",
-    },
+    }
   ],
 };

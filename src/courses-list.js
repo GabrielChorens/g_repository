@@ -5,7 +5,8 @@ import awsEc2 from "./courses/aws-ec2.js";
 import goHexagonal from "./courses/go-hexagonal.js";
 import auditoriaHemav from "./courses/auditoria-hemav.js";
 import automatizaTuFlujoDeTrabajoConGithubActions from "./courses/automatiza-tu-flujo-de-trabajo-con-githubactions.js";
-import awsAutoescalado from "./courses/aws-autoescalado-de-aplicaciones-con-alb-y-asg.js";
+import awsSqsComoColaDeMensajeria from "./courses/aws-sqs-como-cola-de-mensajeria.js";
+
 // Define your courses here
 export const courses = [
   { type: "category", name: "All" },
@@ -16,5 +17,5 @@ export const courses = [
   awsEc2,
   goHexagonal,
   automatizaTuFlujoDeTrabajoConGithubActions,
-  awsAutoescalado,
+  awsSqsComoColaDeMensajeria,
 ];
