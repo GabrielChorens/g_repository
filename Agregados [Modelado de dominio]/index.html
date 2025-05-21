@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargando...</title>
-    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="/codely_repo/styles/main.css">
 </head>
 <body>
     <div class="container">
@@ -25,9 +25,8 @@
             </div>
         </main>
     </div>
-    <div id="toast" class="toast">¡Código copiado!</div>
     <script type="module">
-        import { CourseApp } from '../../src/app.js';
+        import { CourseApp } from '/codely_repo/src/app.js';
         import { CONFIG } from './src/config.js';
         import { courses } from './src/courses.js';
         window.app = new CourseApp(CONFIG, courses);
