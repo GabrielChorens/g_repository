@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargando...</title>
-    <link rel="stylesheet" href="../../styles/main.css">
+    <!-- <link rel="stylesheet" href="../../styles/main.css"> -->
+    <link rel="stylesheet" href="/g_repository/styles/main.css">
 </head>
+
 <body>
     <div class="container">
         <nav class="sidebar">
@@ -27,10 +30,11 @@
     </div>
     <div id="toast" class="toast">¡Código copiado!</div>
     <script type="module">
-        import { CourseApp } from '../../src/app.js';
-        import { CONFIG } from './src/config.js';
+        // import { CourseApp } from '../../src/app.js';
+        import { CourseApp } from '/g_repository/src/app.js'; import { CONFIG } from './src/config.js';
         import { courses } from './src/courses.js';
         window.app = new CourseApp(CONFIG, courses);
     </script>
 </body>
-</html> 
+
+</html>

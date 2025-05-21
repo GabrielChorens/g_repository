@@ -71,7 +71,8 @@ Crea un archivo `index.html` en la raíz de la carpeta del curso con el siguient
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cargando...</title>
-    <link rel="stylesheet" href="../../styles/main.css" />
+    <!-- <link rel="stylesheet" href="../../styles/main.css" /> -->
+    <link rel="stylesheet" href="/g_repository/styles/main.css">
   </head>
   <body>
     <div class="container">
@@ -96,8 +97,8 @@ Crea un archivo `index.html` en la raíz de la carpeta del curso con el siguient
     </div>
     <div id="toast" class="toast">¡Código copiado!</div>
     <script type="module">
-      import { CourseApp } from "../../src/app.js";
-      import { CONFIG } from "./src/config.js";
+        // import { CourseApp } from '../../src/app.js';
+        import { CourseApp } from '/g_repository/src/app.js';      import { CONFIG } from "./src/config.js";
       import { courses } from "./src/courses.js";
       window.app = new CourseApp(CONFIG, courses);
     </script>
