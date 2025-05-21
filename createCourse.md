@@ -98,7 +98,8 @@ Crea un archivo `index.html` en la raíz de la carpeta del curso con el siguient
     <div id="toast" class="toast">¡Código copiado!</div>
     <script type="module">
         // import { CourseApp } from '../../src/app.js';
-        import { CourseApp } from '/g_repository/src/app.js';      import { CONFIG } from "./src/config.js";
+        import { CourseApp } from '/g_repository/src/app.js';      
+        import { CONFIG } from "./src/config.js";
       import { courses } from "./src/courses.js";
       window.app = new CourseApp(CONFIG, courses);
     </script>
