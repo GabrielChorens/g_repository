@@ -11,6 +11,7 @@ import casoPracticoAgregadosYReadModelEnDdd from "./courses/caso-practico-agrega
 import codeSmellsBloaters from "./courses/code-smells-bloaters.js";
 import designPatternsCriteria from "./courses/design-patterns-criteria.js";
 import patronesDeDisenoCQRS from "./courses/patrones-de-diseno-cqrs.js";
+import cqrsYEventSourcingConKotlinYAxonFramework from "./courses/cqrs-y-event-sourcing-con-kotlin-y-axon-framework.js";
 
 // Define your courses here
 export const courses = [
@@ -28,4 +29,5 @@ export const courses = [
   codeSmellsBloaters,
   designPatternsCriteria,
   patronesDeDisenoCQRS,
+  cqrsYEventSourcingConKotlinYAxonFramework,
 ];
