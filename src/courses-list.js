@@ -9,6 +9,7 @@ import awsSqsComoColaDeMensajeria from "./courses/aws-sqs-como-cola-de-mensajeri
 import cache from "./courses/cache.js";
 import casoPracticoAgregadosYReadModelEnDdd from "./courses/caso-practico-agregados-y-read-model-en-ddd.js";
 import codeSmellsBloaters from "./courses/code-smells-bloaters.js";
+import designPatternsCriteria from "./courses/design-patterns-criteria.js";
 
 // Define your courses here
 export const courses = [
@@ -24,4 +25,5 @@ export const courses = [
   cache,
   casoPracticoAgregadosYReadModelEnDdd,
   codeSmellsBloaters,
+  designPatternsCriteria,
 ];
