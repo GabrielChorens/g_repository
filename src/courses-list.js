@@ -8,6 +8,7 @@ import automatizaTuFlujoDeTrabajoConGithubActions from "./courses/automatiza-tu-
 import awsSqsComoColaDeMensajeria from "./courses/aws-sqs-como-cola-de-mensajeria.js";
 import cache from "./courses/cache.js";
 import casoPracticoAgregadosYReadModelEnDdd from "./courses/caso-practico-agregados-y-read-model-en-ddd.js";
+import codeSmellsBloaters from "./courses/code-smells-bloaters.js";
 
 // Define your courses here
 export const courses = [
@@ -22,4 +23,5 @@ export const courses = [
   awsSqsComoColaDeMensajeria,
   cache,
   casoPracticoAgregadosYReadModelEnDdd,
+  codeSmellsBloaters,
 ];
