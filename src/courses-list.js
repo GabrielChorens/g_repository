@@ -10,6 +10,7 @@ import cache from "./courses/cache.js";
 import casoPracticoAgregadosYReadModelEnDdd from "./courses/caso-practico-agregados-y-read-model-en-ddd.js";
 import codeSmellsBloaters from "./courses/code-smells-bloaters.js";
 import designPatternsCriteria from "./courses/design-patterns-criteria.js";
+import patronesDeDisenoCQRS from "./courses/patrones-de-diseno-cqrs.js";
 
 // Define your courses here
 export const courses = [
@@ -26,4 +27,5 @@ export const courses = [
   casoPracticoAgregadosYReadModelEnDdd,
   codeSmellsBloaters,
   designPatternsCriteria,
+  patronesDeDisenoCQRS,
 ];
