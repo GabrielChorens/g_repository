@@ -1,5 +1,5 @@
 export default {
-  title: "01 Patrón Criteria ¡Explicado!",
-  videoId: "2GSI8DoT6rs",
+  title: "Como se genera un code smell",
+  videoId: "uLbVpX0v0ts",
   notes: [],
 };
