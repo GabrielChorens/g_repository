@@ -3,6 +3,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: var(--background);
     color: #222;
+    min-height: 100vh;
 }
 
 :root {
@@ -10,21 +11,30 @@ body {
     --secondary: #a259c6;
     --accent: #fbbf24;
     --background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    --sidebar-width: 270px;
 }
 
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
     min-height: 100vh;
+    position: relative;
+    gap: 2rem;
 }
 
 .sidebar {
-    width: 270px;
+    width: var(--sidebar-width);
     background: rgba(255, 255, 255, 0.12);
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 2rem 1rem 4rem 1rem;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sidebar ul {
@@ -84,7 +94,6 @@ body {
 }
 
 .main-content {
-    flex: 1;
     background: #fff;
     border-radius: 18px;
     margin: 2rem;
@@ -224,13 +233,29 @@ header h1 {
 
 @media (max-width: 900px) {
     .container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
     .sidebar {
         width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .sidebar li {
+        margin: 0;
+    }
+
+    .sidebar li a {
+        white-space: nowrap;
     }
 
     .main-content {
