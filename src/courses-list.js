@@ -12,6 +12,7 @@ import codeSmellsBloaters from "./courses/code-smells-bloaters.js";
 import designPatternsCriteria from "./courses/design-patterns-criteria.js";
 import patronesDeDisenoCQRS from "./courses/patrones-de-diseno-cqrs.js";
 import cqrsYEventSourcingConKotlinYAxonFramework from "./courses/cqrs-y-event-sourcing-con-kotlin-y-axon-framework.js";
+import dddJava from "./courses/ddd-java.js";
 
 // Define your courses here
 export const courses = [
@@ -30,4 +31,5 @@ export const courses = [
   designPatternsCriteria,
   patronesDeDisenoCQRS,
   cqrsYEventSourcingConKotlinYAxonFramework,
+  dddJava,
 ];

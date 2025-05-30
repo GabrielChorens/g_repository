@@ -1,5 +1,5 @@
 export default {
-  title: "Code Smells Bloaters",
+  title: "Code Smells Refactoring de Code Smells a Clean Code: Bloaters",
   firstVideoId: "uLbVpX0v0ts",
   folder: "Code Smells Bloaters",
   notes: [
